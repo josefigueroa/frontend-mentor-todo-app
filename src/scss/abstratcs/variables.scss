@@ -1,0 +1,50 @@
+//BREAKPOINTS
+// 576px, 768px, 992px, 1200px, 1440px, 1444px
+$breakpoints-up: (
+  'small': '36em',
+	'medium': '48em',
+	'large': '62em',
+	'xlarge': '75em',
+	'xxlarge': '90em',
+	'xxxlarge': '90.25em'
+);
+
+// 575px, 767px, 991px, 1199px, 1439px, 1443px
+$breakpoints-down: (
+	'small': '35.9375em',
+	'medium': '47.9375em',
+	'large': '61.9375em',
+	'xlarge': '74.9375em',
+	'xxlarge': '89.9375em',
+	'xxxlarge': '90.1875em',
+);
+
+$spacer: 1rem;
+
+$spacer: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+);
+
+$theme-fonts: (
+	300: 'Light',
+	400: 'Regular',
+	500: 'Medium',
+	700: 'Bold',
+	900: 'Black'
+);
+
+//BASE
+$font-family-base: Poppins;
+$font-size-base: 1rem;
+$font-weight-base: 400;
+$body-bg: #fff;
+
+//PATH
+$img-path: '../img';
+$fonts-path: '../fonts';
+

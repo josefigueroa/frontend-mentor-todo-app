@@ -1,0 +1,14 @@
+@use '../abstratcs/' as *;
+
+@each $key, $value in $theme-fonts {
+  @font-face {
+    font-family: Poppins;
+    src: 
+      local('Poppins #{$value}'), local('Poppins-#{$value}'),
+      url('#{$fonts-path}/poppins/Poppins-#{$value}.ttf') format('truetype');
+    font-style: normal;
+    font-weight: #{$key};
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+  }
+}
