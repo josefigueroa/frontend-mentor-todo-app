@@ -50,7 +50,6 @@ const rules = [rulesForFonts, rulesForImg, rulesForCss, rulesForJS];
 
 const prodConfig = {
   mode: 'production',
-  // devtool: 'eval-source-map',
   module: { rules },
   plugins: [
     new HtmlWebpackPlugin({

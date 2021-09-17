@@ -67,6 +67,7 @@ const devConfig = {
       filename: 'css/style.[contenthash].css'
     })
   ],
+  devtool: 'eval-source-map'
 }
 
 module.exports = merge(config, devConfig);
