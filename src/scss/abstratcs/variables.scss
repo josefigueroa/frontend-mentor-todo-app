@@ -1,4 +1,5 @@
 //BREAKPOINTS
+
 // 576px, 768px, 992px, 1200px, 1440px, 1444px
 $breakpoints-up: (
   'small': '36em',
@@ -35,7 +36,9 @@ $theme-fonts: (
 	700: 'Bold'
 );
 
-//Primary Colors
+//COLORS
+
+//Primary
 $blue: hsl(220, 98%, 61%); //Bright Blue
 $malibu: hsl(192, 100%, 67%); //Check Background
 $heliotrope: rgb(192, 88, 243); //Check Background
@@ -81,8 +84,7 @@ $theme-colors: (
 //BASE
 $font-family-base: JosefinSans;
 $font-size-base: 18px;
-$font-weight-base: 400;
-$body-bg: #fff;
+$font-weight-base: var(--font-Regular);
 
 //PATH
 $img-path: '../img';
