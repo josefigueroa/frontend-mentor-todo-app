@@ -2,10 +2,10 @@
 
 @each $key, $value in $theme-fonts {
   @font-face {
-    font-family: Poppins;
+    font-family: JosefinSans;
     src: 
-      local('Poppins #{$value}'), local('Poppins-#{$value}'),
-      url('#{$fonts-path}/poppins/Poppins-#{$value}.ttf') format('truetype');
+      local('JosefinSans #{$value}'), local('JosefinSans-#{$value}'),
+      url('#{$fonts-path}/Josefin+Sans/JosefinSans-#{$value}.ttf') format('truetype');
     font-style: normal;
     font-weight: #{$key};
     text-rendering: optimizeLegibility;

@@ -1,11 +1,13 @@
-// @use '../abstratcs/' as *;
+@use '../abstratcs/' as *;
 
-// :root{
-//   @each $key, $val in $theme-colors {
-//     --#{$key} : #{$val};
-//   }
+:root{
+  @each $color, $shades in $theme-colors {
+    @each $key, $value in $shades {
+      --#{$color}-#{$key} : #{$value};
+    }
+  }
 
-//   @each $key, $value in $theme-fonts {
-//     --font-#{$value}: #{$key};
-//   }
-// }
+  @each $key, $value in $theme-fonts {
+    --font-#{$value}: #{$key};
+  }
+}

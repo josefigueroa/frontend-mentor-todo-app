@@ -31,16 +31,56 @@ $spacer: (
 );
 
 $theme-fonts: (
-	300: 'Light',
 	400: 'Regular',
-	500: 'Medium',
-	700: 'Bold',
-	900: 'Black'
+	700: 'Bold'
+);
+
+//Primary Colors
+$blue: hsl(220, 98%, 61%); //Bright Blue
+$malibu: hsl(192, 100%, 67%); //Check Background
+$heliotrope: rgb(192, 88, 243); //Check Background
+
+//Light Theme
+$gray: hsl(0, 0%, 98%); //Very Light Gray
+$snuff: hsl(236, 33%, 92%); //Very Light Grayish Blue //Light Grayish Blue (hover)
+$mischka: hsl(233, 11%, 84%); //Light Grayish Blue
+$manatee: hsl(236, 9%, 61%); //Dark Grayish Blue
+$mulledWine: hsl(235, 19%, 35%); //Very Dark Grayish Blue
+
+//Dark Theme
+$cinder: hsl(235, 21%, 11%); //Very Dark Blue
+$ebonyClay: hsl(235, 24%, 19%); //Very Dark Desaturated Blue
+$periwinkle: hsl(234, 39%, 85%);//Light Grayish Blue
+$waterloo: hsl(234, 11%, 52%); //Dark Grayish Blue
+$trout: hsl(233, 14%, 35%); //Very Dark Grayish Blue
+$brightGray: hsl(237, 14%, 26%); //Very Dark Grayish Blue
+
+$theme-colors: (
+	primary: (
+		blue: $blue,
+		malibu: $malibu,
+		heliotrope: $heliotrope
+	),
+	light: (
+		gray: $gray,
+		snuff: $snuff,
+		mischka: $mischka,
+		manatee: $manatee,
+		mulledWine: $mulledWine
+	),
+	dark: (
+		cinder: $cinder,
+		ebonyClay: $ebonyClay,
+		periwinkle: $periwinkle,
+		waterloo: $waterloo,
+		trout: $trout,
+		brightGray: $brightGray
+	),
 );
 
 //BASE
-$font-family-base: Poppins;
-$font-size-base: 1rem;
+$font-family-base: JosefinSans;
+$font-size-base: 18px;
 $font-weight-base: 400;
 $body-bg: #fff;
 
