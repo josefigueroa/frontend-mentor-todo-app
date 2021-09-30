@@ -2,6 +2,22 @@
 
 [data-theme="dark"]{
   --body-bg: var(--dark-cinder);
+  --card-bg: var(--dark-ebonyClay);
+
+  --border-color: var(--dark-brightGray);
+  --text-color: var(--dark-periwinkle);
+  --text-color-completed: var(--dark-trout);
+  --text-color-label: var(--light-mulledWine);
+
+  --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  --focus: var(--light-mischka);
+
+  --header-img: url('#{$img-path}/bg-mobile-dark.jpg');
+  --theme-icon: url('#{$img-path}/icon-sun.svg');
+
+  @include breakpoint('medium'){    
+    --header-img: url('#{$img-path}/bg-desktop-dark.jpg');    
+  }
 }
 
 body{
@@ -10,4 +26,21 @@ body{
   font-size: $font-size-base;
   font-weight: $font-weight-base;
   background-repeat: no-repeat;
+  transition: background .4s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+}
+
+
+button{
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }

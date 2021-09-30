@@ -1,0 +1,38 @@
+@use '../abstratcs/' as *;
+
+.nav{
+  border-radius: rem(5);
+  overflow: hidden;
+  background-color: var(--card-bg);  
+  margin-bottom: rem(40);
+  @include breakpoint('small'){
+    display: none;
+  }
+  &--mobile{
+    margin-bottom: rem(0);
+    display: none;
+    @include breakpoint('small'){
+      display: block;
+    }
+  }
+  &__list{
+    height: 100%;
+    min-height: rem(54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(15);
+  }
+  &__item{
+    &:not(:last-child){
+      padding-right: rem(20);
+    }   
+  }
+  &__link{
+    color: var(--text-color-label);
+    font-weight: var(--font-Bold);
+    &--active{
+      color: var(--primary-blue);
+    }
+  }
+}

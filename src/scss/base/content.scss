@@ -1,0 +1,7 @@
+@use '../abstratcs/' as *;
+
+.info{
+  text-align: center;
+  font-size: rem(15);
+  color: var(--text-color-label);
+}

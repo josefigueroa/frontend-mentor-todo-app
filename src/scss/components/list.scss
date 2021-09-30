@@ -1,0 +1,69 @@
+@use '../abstratcs/' as *;
+
+.list{
+  margin-top: rem(-27);
+  border-top-left-radius: rem(5);
+  border-top-right-radius: rem(5);
+  overflow: hidden;
+  &__item{
+    background-color: var(--card-bg);
+    padding-left: rem(24);
+    padding-right: rem(24);
+    min-height: rem(54);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    &:hover > .list__remove{
+      opacity: 1;
+      transition: .4s;
+    }
+  }
+  &__text{
+    font-size: rem(12);
+    padding-left: rem(12);
+    padding-right: rem(12);
+    color: var(--text-color);
+    flex: 1;
+    &--completed{
+      color: var(--text-color-completed);
+      text-decoration: line-through;
+    }
+  }
+  &__remove{
+    opacity: 0;
+    width: rem(18);
+    height: rem(18);
+    transition: .4s;
+    &:focus{
+      opacity: 1;
+      transition: .4s;
+    }
+  }
+}
+
+.options{
+  border-bottom-left-radius: rem(5);
+  border-bottom-right-radius: rem(5);
+  overflow: hidden;
+  background-color: var(--card-bg);
+  padding-left: rem(24);
+  padding-right: rem(24);
+  min-height: rem(54);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(14);
+  box-shadow: var(--box-shadow);
+  @include breakpoint('small'){
+    margin-bottom: rem(40);
+  }
+    
+  &__items{
+    font-size: rem(12);
+    color: var(--text-color-label);
+  }
+  &__completed{
+    font-size: rem(12);
+    color: var(--text-color-label);
+  }
+}

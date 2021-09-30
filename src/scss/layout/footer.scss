@@ -1,0 +1,9 @@
+@use '../abstratcs/' as *;
+
+.footer{
+  padding-bottom: rem(15);
+  &__attribution{
+    color: var(--text-color-label);
+    font-size: rem(14);
+  }
+}
