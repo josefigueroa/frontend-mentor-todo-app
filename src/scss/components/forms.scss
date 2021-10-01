@@ -16,6 +16,7 @@
     transform: translateY(-50%);
   }
   &__control{
+    color: var(--text-color-input);
     background-color: var(--card-bg);
     max-height: rem(48);
     height: rem(48);
@@ -26,48 +27,88 @@
     border: 0;
     padding: rem(13) rem(20) rem(13) rem(55);
     transition: background .4s;
+    @include breakpoint('small'){
+      font-size: rem(18);
+    }
   }
 }
 
 .custom-checkbox{
   position: relative;
   &__label{
-    width: rem(20);
-    height: rem(20);
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: rem(12);
+    color: var(--text-color);
+    vertical-align: middle;
+    @include breakpoint('small'){
+      font-size: rem(18);
+    }
+    &--completed{
+      color: var(--text-color-completed);
+      text-decoration: line-through;
+    }
   }
   &__input{
-    position: absolute;
-    clip: rect(0,0,0,0);
-    pointer-events: none;
+    border-radius: 50%;
+    appearance: none;
+    width: rem(20);
+    height: rem(20);
+    border: 1px solid var(--border-color);
     margin: 0;
-    &:focus  ~ .custom-checkbox__label{
-      outline: 2px solid var(--focus);
-    }
-    
-    &:checked ~ .custom-checkbox__label{
+    background-color: var(--card-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    vertical-align: top;
+    cursor: pointer;
+    margin-right: rem(10);
+    transition: background .4s;
+    position: relative;
+    &:hover{
+      transition: background .4s;
+      border: 0;
       background: var(--linear-gradient);
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    }
+    &:checked{
+      border: 0;
+      background: var(--linear-gradient);
+      &:after{
+        content: "";
+        position: absolute;
+        background: var(--linear-gradient);
+        top: 1px;
+        left: 1px;
+        right: 1px;
+        bottom: 1px;
+        border-radius: 50%;
+      }
       &:before{
         content: '';
         background-image: url('#{$img-path}/icon-check.svg');
-        width: 11px;
-        height: 9px;
-        display: inline-block;
-        // background-repeat: no-repeat;
-        // transform: translate(-50%, -50%);
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
+        background-color: transparent;
+        width: rem(11);
+        height: rem(9);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(50%, -50%);
+        border: 0;
+        z-index: 1;
+        opacity: 1;
       }
-     
+    }
+    &:focus{
+      outline: 2px solid var(--focus);
+      outline-offset: 1px;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      background: var(--card-bg);
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      border-radius: 50%;
     }
   }
 }

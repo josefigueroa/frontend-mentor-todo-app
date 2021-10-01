@@ -31,8 +31,14 @@
   &__link{
     color: var(--text-color-label);
     font-weight: var(--font-Bold);
+    &:hover{
+      color: var(--text-color);
+    }
     &--active{
       color: var(--primary-blue);
+      &:hover{
+        color: var(--primary-blue);
+      }
     }
   }
 }

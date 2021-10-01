@@ -5,5 +5,9 @@
   &__attribution{
     color: var(--text-color-label);
     font-size: rem(14);
+    text-align: center;
+    @include breakpoint('small'){
+      font-size: rem(18);
+    }
   }
 }

@@ -8,6 +8,7 @@
   --text-color: var(--dark-periwinkle);
   --text-color-completed: var(--dark-trout);
   --text-color-label: var(--light-mulledWine);
+  --text-color-input: var(--dark-periwinkle);
 
   --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
   --focus: var(--light-mischka);
@@ -43,4 +44,19 @@ button{
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+.sr-only{
+  position: absolute;
+  margin: -1px 0 0 -1px;
+  padding: 0;
+  display: block;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  line-height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+  outline: 0;
 }

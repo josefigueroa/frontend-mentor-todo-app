@@ -1,4 +1,11 @@
-import {sayHi} from './modules/util.js';
+import { Theme } from './modules/theme';
 import "../scss/style.scss"
 
-sayHi()
+const themeInit = new Theme();
+
+
+
+window.addEventListener('DOMContentLoaded', () => { 
+  themeInit.loadTheme();
+  themeInit.eventListeners();
+})
