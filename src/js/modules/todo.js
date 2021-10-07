@@ -30,7 +30,7 @@ export class Todo {
       htmlTemplete += `
         <li class="list__item" data-complete="${item.complete}" data-id="${item.id}" draggable="true">
           <div class="custom-checkbox">
-            <input type="checkbox" class="custom-checkbox__input" name="" id="${item.id}" ${checked}>
+            <input type="checkbox" class="custom-checkbox__input" id="check-${item.id}" ${checked}>
             <label for="check-${item.id}" class="custom-checkbox__label ${completed}">${item.note}</label>
           </div>
           <button class="list__remove" aria-label="remove ${item.note} note" data-id=${item.id}></button>
