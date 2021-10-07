@@ -1,0 +1,14 @@
+@use '../abstratcs/' as *;
+
+.draggable {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  cursor: move;
+  
+}
+.dragging {
+  opacity: .5;
+  transition: .4s;
+}
+

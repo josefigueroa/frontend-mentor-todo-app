@@ -2,17 +2,17 @@
   {
     "note": "Complete online JavaScript course",
     "complete": true,
-    "id": 1        
+    "id": 1    
   },
   {
     "note": "Jog around the park 3x",
     "complete": false,
-    "id": 2        
+    "id": 2      
   },     
   {
     "note": "10 minutes meditation",
     "complete": false,
-    "id": 3        
+    "id": 3
   },
   {
     "note": "Read for 1 hour",
@@ -22,7 +22,7 @@
   {
     "note": "Pick up groceries",
     "complete": false,
-    "id": 5        
+    "id": 5         
   },
   {
     "note": "Complete Todo App on Frontend Mentor",

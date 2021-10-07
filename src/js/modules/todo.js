@@ -17,16 +17,18 @@ export class Todo {
   /**
    * Print notes from localStorage
    * @param {Array} notes 
+   * @param {String} status 
    */
-  printNotes(notes){
+  printNotes(notes, status = ''){
     let htmlTemplete='';
-
+    let emptyTemplete = `<li class="list__item"><p class="list__text">${status}</p>`;
+    let listEl = document.querySelector('.list');
     notes.forEach(item => {
       let completed = (item.complete ? 'custom-checkbox__label--completed' : '');
       let checked = (item.complete ? 'checked' : '');
 
       htmlTemplete += `
-        <li class="list__item" data-complete=${item.complete}>
+        <li class="list__item" data-complete="${item.complete}" data-id="${item.id}" draggable="true">
           <div class="custom-checkbox">
             <input type="checkbox" class="custom-checkbox__input" name="" id="${item.id}" ${checked}>
             <label for="check-${item.id}" class="custom-checkbox__label ${completed}">${item.note}</label>
@@ -36,7 +38,11 @@ export class Todo {
       `;
     });
 
-    document.querySelector('.list').innerHTML = htmlTemplete;
+    if(htmlTemplete){
+      listEl.innerHTML = htmlTemplete;   
+    }else{
+      listEl.innerHTML = emptyTemplete
+    }
     this.countItems();   
   }
 
@@ -59,7 +65,7 @@ export class Todo {
    */
   notes(){
     let notes = JSON.parse(localStorage.getItem('TODO'));
-    this.printNotes(notes);    
+    this.printNotes(notes, 'No todos created');    
   } 
 
   /**
@@ -71,7 +77,7 @@ export class Todo {
       return lenght.complete !== true;
     });
 
-    this.printNotes(activeNotes);    
+    this.printNotes(activeNotes, 'No active todos');    
   }
 
   /**
@@ -83,7 +89,7 @@ export class Todo {
       return lenght.complete === true;
     });
 
-    this.printNotes(completeNotes)
+    this.printNotes(completeNotes, 'No completed todos')
   }
 
   /**
@@ -149,12 +155,13 @@ export class Todo {
   checkNote (target){
     let notes = JSON.parse(localStorage.getItem('TODO'));
     let id = parseInt(target.id);
-    console.log(target);
+
     notes.forEach(element => {
       if(element.id === id){
         element.complete = target.checked;
       }
     });
+
     localStorage.setItem("TODO", JSON.stringify(notes));
 
     if(target.checked){

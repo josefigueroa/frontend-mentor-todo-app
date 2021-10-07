@@ -24,6 +24,9 @@
       min-height: rem(64);
     }
   }
+  &__text{
+    color: var(--text-color-label)
+  }
   &__remove{
     opacity: 0;
     width: 100%;

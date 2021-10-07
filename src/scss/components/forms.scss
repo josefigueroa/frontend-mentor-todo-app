@@ -39,6 +39,7 @@
     font-size: rem(12);
     color: var(--text-color);
     vertical-align: middle;
+    cursor: pointer;
     @include breakpoint('small'){
       font-size: rem(18);
     }
