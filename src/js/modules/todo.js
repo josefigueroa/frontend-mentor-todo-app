@@ -19,7 +19,7 @@ export class Todo {
    * @param {Array} notes 
    * @param {String} status 
    */
-  printNotes(notes, status = ''){
+  printNotes(notes, status = 'No todos created'){
     let htmlTemplete='';
     let emptyTemplete = `<li class="list__item"><p class="list__text">${status}</p>`;
     let listEl = document.querySelector('.list');
@@ -30,8 +30,8 @@ export class Todo {
       htmlTemplete += `
         <li class="list__item" data-complete="${item.complete}" data-id="${item.id}" draggable="true">
           <div class="custom-checkbox">
-            <input type="checkbox" class="custom-checkbox__input" id="check-${item.id}" ${checked}>
-            <label for="check-${item.id}" class="custom-checkbox__label ${completed}">${item.note}</label>
+            <input type="checkbox" class="custom-checkbox__input" id="${item.id}" ${checked}>
+            <label for="${item.id}" class="custom-checkbox__label ${completed}">${item.note}</label>
           </div>
           <button class="list__remove" aria-label="remove ${item.note} note" data-id=${item.id}></button>
         </li>
@@ -157,7 +157,7 @@ export class Todo {
     let id = parseInt(target.id);
 
     notes.forEach(element => {
-      if(element.id === id){
+      if(element.id === id){        
         element.complete = target.checked;
       }
     });
@@ -182,7 +182,7 @@ export class Todo {
     const notes = JSON.parse(localStorage.getItem('TODO'));
     const value = formData.get('todo');
     const getIds = notes.map(note => note.id);
-    const maxId = Math.max(...getIds);
+    const maxId = (getIds.length !== 0) ? Math.max(...getIds) : 0;
 
     let newNote =  {
       note: value,
